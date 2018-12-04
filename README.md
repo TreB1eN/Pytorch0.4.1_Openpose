@@ -37,9 +37,9 @@ python pose_detect.py models/posenet.pth -i data/football.jpg
 ```
 
 <div align="center">
-<img src="https://github.com/TreB1eN/Pytorch0.4.1_Openpose/blob/master/data/football.jpg" width="600" height="300">
+<img src="https://github.com/TreB1eN/Pytorch0.4.1_Openpose/blob/master/data/football.jpg" width="800" height="600">
 &nbsp;
-<img src="https://github.com/TreB1eN/Pytorch0.4.1_Openpose/blob/master/data/football_detected.jpg" width="600" height="300">
+<img src="https://github.com/TreB1eN/Pytorch0.4.1_Openpose/blob/master/data/football_detected.jpg" width="800" height="600">
 </div>
 
 
