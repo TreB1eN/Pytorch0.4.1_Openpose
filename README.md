@@ -5,7 +5,7 @@ The original project is <a href="https://github.com/ZheC/Realtime_Multi-Person_P
 
 This repo is mainly based on the [Chainer Implementation](https://github.com/DeNA/Chainer_Realtime_Multi-Person_Pose_Estimation) from DeNA.
 
-This project is licensed under the terms of the <a href="LICENSE">license</a>.
+This project is licensed under the terms of the [license](https://github.com/DeNA/Chainer_Realtime_Multi-Person_Pose_Estimation/blob/master/LICENSE)
 
 Some contributions are:
 
