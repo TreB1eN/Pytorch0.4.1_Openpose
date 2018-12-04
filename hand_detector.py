@@ -86,7 +86,7 @@ def draw_hand_keypoints(orig_img, hand_keypoints, left_top):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Face detector')
     parser.add_argument('weights', help='weights file path')
-    parser.add_argument('--img', help='image file path')
+    parser.add_argument('--img', '-i', help='image file path')
     args = parser.parse_args()
 
     # load model
@@ -99,6 +99,6 @@ if __name__ == '__main__':
     hand_keypoints = hand_detector.detect(img, hand_type="right")
 
     # draw and save image
-    img = draw_hand_keypoints(img, hand_keypoints, (0, 0))
+    img = draw_hand_keypoints(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), hand_keypoints, (0, 0))
     print('Saving result into result.png...')
     cv2.imwrite('result.png', img)
