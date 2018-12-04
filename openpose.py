@@ -10,8 +10,6 @@ from tensorboardX import SummaryWriter
 from entity import params, JointType
 from models.CocoPoseNet import CocoPoseNet, compute_loss
 from tqdm import tqdm
-from pycocotools.coco import COCO
-from coco_dataset import CocoDataset
 from torch.utils.data import DataLoader
 from torch.optim import Adam
 from datetime import datetime
@@ -26,7 +24,7 @@ class Openpose(object):
         self.arch = arch
         if weights_file:
             self.model = params['archs'][arch]()
-            model.load_state_dict(torch.load(weights_file))
+            self.model.load_state_dict(torch.load(weights_file))
         else:
             self.model = params['archs'][arch](params['pretrained_path'])
 
@@ -34,6 +32,8 @@ class Openpose(object):
         self.model = self.model.to(self.device)
         
         if training:
+            from pycocotools.coco import COCO
+            from coco_dataset import CocoDataset
             for para in self.model.base.vgg_base.parameters():
                 para.requires_grad = False
             coco_train = COCO(os.path.join(params['coco_dir'], 'annotations/person_keypoints_train2017.json'))
